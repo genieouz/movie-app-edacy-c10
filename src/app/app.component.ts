@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IMovie } from './movie/types/movie.interface';
 
 @Component({
   selector: 'app-root',
@@ -9,21 +10,24 @@ export class AppComponent {
   title = 'MOVIES APP PAGE';
   fullName = "John Bishop";
   search = "";
-  movies = [
+  movies: IMovie[] = [
     {
       title: "Vikings",
-      cover: "./assets/img/flash.jpeg",
-      description: "Description du movie vikings"
+      cover: "./assets/img/vikings.jpeg",
+      description: "Description du movie vikings",
+      year: 2010
     },
     {
       title: "Game of thrones",
-      cover: "./assets/img/flash.jpeg",
-      description: "Description du movie game"
+      cover: "./assets/img/got.jpg",
+      description: "Description du movie game",
+      year: 2014
     },
     {
       title: "The Flash",
       cover: "./assets/img/flash.jpeg",
-      description: "Description du movie flash"
+      description: "Description du movie flash",
+      year: 2018
     }
   ]
 
