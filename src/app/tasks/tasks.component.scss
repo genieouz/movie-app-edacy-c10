@@ -1,0 +1,53 @@
+.container {
+  form {
+    .form-control {
+      width: 226px;
+      height: 42px;
+      border: 1px solid lightgray;
+      border-radius: 4px;
+      margin-right: 12px;
+    }
+
+
+
+  }
+
+  .btn {
+    height: 42px;
+
+    min-width: 50px;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    &.btn-success {
+      background-color: green;
+    }
+    &.btn-primary {
+      background-color: blue;
+    }
+    &.btn-danger {
+      background-color: red;
+    }
+  }
+
+  .tasks {
+    margin-top: 5%;
+    width: 60%;
+    .task {
+      margin-bottom: 24px;
+      height: 70px;
+      border: 1px solid lightgray;
+      line-height: 70px;
+      padding-left: 12px;
+      .task-info {
+        display: inline-block;
+        width: 33%;
+
+        button {
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+
+}
