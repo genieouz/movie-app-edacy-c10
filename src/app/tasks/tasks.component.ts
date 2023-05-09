@@ -17,4 +17,8 @@ export class TasksComponent {
   addTask() {
     this.tasks.push({ ...this.task })
   }
+
+  removeTask(index: number) {
+
+  }
 }

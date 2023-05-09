@@ -9,7 +9,7 @@
     <button class="btn btn-success" (click)="addTask()">OK</button>
   </form>
   <div class="tasks">
-    <div *ngFor="let task of tasks" class="task">
+    <div *ngFor="let task of tasks; let i = index" class="task">
       <div class="task-info">
         <span>{{task.title}}</span>
       </div>
@@ -18,7 +18,7 @@
       </div>
       <div class="task-info">
         <button class="btn btn-primary">Modifier</button>
-        <button class="btn btn-danger">Supprimer</button>
+        <button class="btn btn-danger" (click)="removeTask()">Supprimer</button>
       </div>
     </div>
   </div>
