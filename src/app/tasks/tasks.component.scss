@@ -1,5 +1,6 @@
 .container {
   form {
+    margin-bottom: 1%;
     .form-control {
       width: 226px;
       height: 42px;
@@ -31,7 +32,6 @@
   }
 
   .tasks {
-    margin-top: 5%;
     width: 60%;
     .task {
       margin-bottom: 24px;

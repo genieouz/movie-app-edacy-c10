@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MovieComponent } from './movie/movie.component';
 import { TitleComponent } from './title/title.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieComponent,
     TitleComponent,
-    TasksComponent
+    TasksComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

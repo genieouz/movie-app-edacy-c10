@@ -12,13 +12,14 @@ export class TasksComponent {
     { title: "Task 2", status: "A faire" },
     { title: "Task 3", status: "En cours" },
     { title: "Task 4", status: "Terminer" }
-  ]
+  ];
+  search: string = "";
 
   addTask() {
     this.tasks.push({ ...this.task })
   }
 
   removeTask(index: number) {
-
+    this.tasks.splice(index, 1);
   }
 }
