@@ -12,7 +12,7 @@ export class AppComponent {
   search = "";
   movies: IMovie[] = [
     {
-      title: "Vikings",
+      title: "vikings",
       cover: "./assets/img/vikings.jpeg",
       description: "Description du movie vikings",
       year: 2010

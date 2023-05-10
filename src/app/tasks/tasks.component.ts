@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent {
+  constructor() {}
   task = { title: "", status: "A faire" }
   tasks = [
     { title: "Task 1", status: "En cours" },
@@ -14,12 +15,14 @@ export class TasksComponent {
     { title: "Task 4", status: "Terminer" }
   ];
   search: string = "";
+  searchField: string = "title"
 
   addTask() {
-    this.tasks.push({ ...this.task })
+    this.tasks = [...this.tasks, { ...this.task }]
   }
 
   removeTask(index: number) {
     this.tasks.splice(index, 1);
+    this.tasks = [...this.tasks]
   }
 }

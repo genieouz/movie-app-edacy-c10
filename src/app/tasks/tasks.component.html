@@ -9,10 +9,14 @@
     <button class="btn btn-success" (click)="addTask()">OK</button>
   </form>
   <form>
+    <select class="form-control" name="searchField" [(ngModel)]="searchField">
+      <option value="title">Title</option>
+      <option value="status">Status</option>
+    </select>
     <input type="text" [(ngModel)]="search" name="search" placeholder="Search..." class="form-control">
   </form>
   <div class="tasks">
-    <div *ngFor="let task of tasks | filter:search; let i = index" class="task">
+    <div *ngFor="let task of tasks | filterByField:search:searchField; let i = index" class="task">
       <div class="task-info">
         <span>{{task.title}}</span>
       </div>

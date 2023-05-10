@@ -8,6 +8,7 @@ import { MovieComponent } from './movie/movie.component';
 import { TitleComponent } from './title/title.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { FilterPipe } from './filter.pipe';
+import { FilterByFieldPipe } from './filter-by-field.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FilterPipe } from './filter.pipe';
     MovieComponent,
     TitleComponent,
     TasksComponent,
-    FilterPipe
+    FilterPipe,
+    FilterByFieldPipe
   ],
   imports: [
     BrowserModule,
