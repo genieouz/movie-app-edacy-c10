@@ -1,0 +1,31 @@
+form {
+  margin-bottom: 1%;
+  .form-control {
+    width: 226px;
+    height: 42px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    margin-right: 12px;
+  }
+
+
+
+}
+
+.btn {
+  height: 42px;
+
+  min-width: 50px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  &.btn-success {
+    background-color: green;
+  }
+  &.btn-primary {
+    background-color: blue;
+  }
+  &.btn-danger {
+    background-color: red;
+  }
+}

@@ -7,7 +7,7 @@ import { IMovie } from './movie/types/movie.interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'MOVIES APP PAGE';
+  title = 'MY APP';
   fullName = "John Bishop";
   search = "";
   movies: IMovie[] = [

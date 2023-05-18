@@ -1,13 +1,5 @@
 <div class="container">
-  <form>
-    <input type="text" name="title" [(ngModel)]="task.title" class="form-control" placeholder="Task title">
-    <select class="form-control" name="status" [(ngModel)]="task.status">
-      <option value="A faire">A faire</option>
-      <option value="En cours">En cours</option>
-      <option value="Terminer">Terminer</option>
-    </select>
-    <button class="btn btn-success" (click)="addTask()">OK</button>
-  </form>
+  <button [routerLink]="'create'" class="btn btn-success">CREATE TASK</button>
   <form>
     <select class="form-control" name="searchField" [(ngModel)]="searchField">
       <option value="title">Title</option>
