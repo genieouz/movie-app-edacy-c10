@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+form {
+  margin-bottom: 1%;
+  .form-group {
+    margin-bottom: 24px;
+    label {
+      display: block;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+    .form-control {
+      width: 226px;
+      height: 42px;
+      border: 1px solid lightgray;
+      border-radius: 4px;
+      margin-right: 12px;
+      width: 100%;
+    }
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+.btn {
+  height: 42px;
+
+  min-width: 50px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+
+  &.btn-success {
+    background-color: green;
+  }
+  &.btn-primary {
+    background-color: blue;
+  }
+  &.btn-danger {
+    background-color: red;
+  }
+}

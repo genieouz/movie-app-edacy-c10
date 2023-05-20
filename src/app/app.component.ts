@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { IMovie } from './movie/types/movie.interface';
 
 @Component({
@@ -7,6 +8,7 @@ import { IMovie } from './movie/types/movie.interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(private router: Router) {}
   title = 'MY APP';
   fullName = "John Bishop";
   search = "";
@@ -33,5 +35,15 @@ export class AppComponent {
 
   filter() {
     return this.movies.filter(movie => movie.title.includes(this.search));
+  }
+
+
+  logout() {
+    localStorage.removeItem("currentSession")
+    this.router.navigate(['/auth/login'])
+  }
+
+  userIsLoggedIn() {
+    return localStorage.getItem("currentSession")
   }
 }

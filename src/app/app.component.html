@@ -1,4 +1,9 @@
 <h1>{{ title }}</h1>
+<div class="btn-actions">
+    <button class="btn btn-primary" routerLink="/auth/register">REGISTER</button>
+    <button class="btn btn-primary" *ngIf="!userIsLoggedIn()" routerLink="/auth/login">LOGIN</button>
+    <button class="btn btn-danger" (click)="logout()">LOGOUT</button>
+</div>
   <!-- <app-title [title]="'Un titre'"></app-title>
   <input type="text" [(ngModel)]="search">
   <div>
