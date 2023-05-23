@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { FilterByFieldPipe } from '../shared/pipes/filter-by-field/filter-by-field.pipe';
 import { FilterByFieldModule } from '../shared/pipes/filter-by-field/filter-by-field.module';
 import { TasksFormComponent } from './tasks-form/tasks-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { TasksFormComponent } from './tasks-form/tasks-form.component';
     CommonModule,
     TasksRoutingModule,
     FormsModule,
-    FilterByFieldModule
+    FilterByFieldModule,
+    HttpClientModule
   ],
   exports: [TasksComponent]
 })
