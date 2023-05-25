@@ -8,6 +8,7 @@ import { FilterByFieldPipe } from '../shared/pipes/filter-by-field/filter-by-fie
 import { FilterByFieldModule } from '../shared/pipes/filter-by-field/filter-by-field.module';
 import { TasksFormComponent } from './tasks-form/tasks-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TasksService } from './tasks.service';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     FilterByFieldModule,
     HttpClientModule
   ],
+  providers: [TasksService],
   exports: [TasksComponent]
 })
 export class TasksModule { }

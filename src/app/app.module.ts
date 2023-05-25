@@ -10,6 +10,9 @@ import { FilterPipe } from './shared/pipes/filter/filter.pipe';
 import { TasksModule } from './tasks/tasks.module';
 import { FilterByFieldModule } from './shared/pipes/filter-by-field/filter-by-field.module';
 import { FilterModule } from './shared/pipes/filter/filter.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
+import { ErrorInterceptor } from './error.interceptor';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,13 @@ import { FilterModule } from './shared/pipes/filter/filter.module';
     AppRoutingModule,
     FormsModule,
     FilterByFieldModule,
-    FilterModule
+    FilterModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

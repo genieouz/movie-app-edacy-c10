@@ -1,5 +1,6 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class TasksComponent implements OnInit {
   tasks: any = [];
   BASE_URL="http://localhost:3001";
-  constructor(private http: HttpClient) {
+  constructor(private tasksService: TasksService) {
 
   }
   ngOnInit(): void {
@@ -26,7 +27,7 @@ export class TasksComponent implements OnInit {
     // this.tasks.splice(index, 1);
     // this.tasks = [...this.tasks];
     // localStorage.setItem("tasks", JSON.stringify(this.tasks))
-    this.http.delete(`${this.BASE_URL}/tasks/${id}`).subscribe(
+    this.tasksService.removeTask(id).subscribe(
       (result: any) => {
         if(result.deletedCount === 1) {
           this.getTasks();
@@ -36,7 +37,7 @@ export class TasksComponent implements OnInit {
   }
 
   getTasks() {
-    this.http.get(`${this.BASE_URL}/tasks`).subscribe(
+    this.tasksService.getTasks().subscribe(
       (result: any) => {
         this.tasks = result;
       }

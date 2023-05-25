@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -13,19 +15,28 @@ export class RegisterComponent implements OnInit {
     username: "",
     password: ""
   }
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
   registerUser() {
-    let users: any = localStorage.getItem("users");
-    if(users) {
-      users = JSON.parse(users);
-      users.push(this.newUser);
-    } else {
-      users = [this.newUser];
-    }
-    localStorage.setItem("users", JSON.stringify(users));
+    // let users: any = localStorage.getItem("users");
+    // if(users) {
+    //   users = JSON.parse(users);
+    //   users.push(this.newUser);
+    // } else {
+    //   users = [this.newUser];
+    // }
+    // localStorage.setItem("users", JSON.stringify(users));
+    this.authService.register(this.newUser).subscribe(
+      result => {
+        localStorage.setItem("currentSession", JSON.stringify(result));
+        this.router.navigate(['/tasks'])
+      }
+    )
   }
 }
