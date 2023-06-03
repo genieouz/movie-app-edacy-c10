@@ -7,23 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  user = {
-    username: "",
-    password: ""
-  }
   errorMessage: string = "";
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  login() {
+  login(form: any) {
+    console.log(form)
+    return
     let users: any = localStorage.getItem("users");
     if(!users) {
       this.errorMessage = "Vous n'etes pas encore inscrit"
     } else {
       users = JSON.parse(users);
-      const found = users.find((item: any) => item.username === this.user.username && item.password === this.user.password);
+      const found = users.find((item: any) => item.username === form.username && item.password === form.password);
       if(!found) {
         this.errorMessage = "Mot de passe ou nom d'utilisateur incorrecte";
       } else {

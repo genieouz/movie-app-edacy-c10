@@ -5,6 +5,17 @@
     margin: auto;
     border-radius: 4px;
     padding: 24px;
+
+    .desactivated {
+      background-color: gray;
+      opacity: 0.5;
+    }
+    .error {
+      border: 1px solid red;
+    }
+    .error-message {
+      color: red;
+    }
   }
   h2 {
     text-align: center;
